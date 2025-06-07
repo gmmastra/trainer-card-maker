@@ -1,17 +1,40 @@
 /* eslint-disable import/first */
-import React from "react";
-const mergeImages = require('merge-images');
-import CardPreview from "./CardPreview";
+import { useRef } from "react";
+import { toPng, toJpeg, toSvg } from "html-to-image";
 
 export function CardArea(props) {
+
+    const cardPreviewRef = useRef(null);
+
+    const htmlToImageConvert = () => {
+        toPng(cardPreviewRef.current, { cacheBust: false })
+            .then((dataUrl) => {
+                const link = document.createElement("a");
+                link.download = "trainer-card.png";
+                link.href = dataUrl;
+                link.click();
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+    };
+
     return (
         <>
-        {props.cardFrame}
-            <div className='card-preview'>
-                <CardPreview cardFrame={props.cardFrame} />
+            <div className='card-preview' ref={cardPreviewRef}>
+                {props.trainerType1 === 'None' ? null : (
+                    <img src={process.env.PUBLIC_URL + `/assets/types/${props.trainerType1}.png`} className='trainer-type1' />
+                )}
+                {props.trainerType2 === 'None' ? null : (
+                    <img src={process.env.PUBLIC_URL + `/assets/types/${props.trainerType2}.png`} className='trainer-type2' />
+                )}
+                {props.cardFrame === '' ? null : (
+                    <img src={process.env.PUBLIC_URL + `/assets/cards/${props.cardFrame}.png`} className='card-frame' />
+                )}
+                <div className='card-preview-bg'/>
             </div>
             <div className='card-options'>
-                <button type="submit">DOWNLOAD</button>
+                <button onClick={htmlToImageConvert}>DOWNLOAD</button>
                 <button type="submit">RANDOMIZE</button>
                 <button type="reset" onClick={props.reset}>RESET</button>
             </div>

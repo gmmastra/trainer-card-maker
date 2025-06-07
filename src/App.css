@@ -64,12 +64,49 @@ body {
   padding: 15px 30px;
   position: fixed;
   right: 0px;
+  top: 100px;
+}
+
+.card-preview {
+  height: 140px;
+  width: 228px;
+}
+
+.card-preview img {
+  position: absolute;
 }
 
 .card-options {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  position: absolute;
+  top: 170px;
+  right: 60px;
+}
+
+.card-frame {
+  z-index: 1;
+  right: 0px;
+  bottom: 15px;
+  margin-right: 60px;
+  margin-bottom: 15px;
+}
+
+.trainer-type1 {
+  z-index: 2;
+  right: 100px;
+}
+
+.trainer-type2 {
+  z-index: 2;
+  right: 65px;
+}
+
+.card-preview-bg {
+  height: 140px;
+  width: 228px;
+  /* background-color: red; */
 }
 
 .btn-primary,
@@ -111,6 +148,6 @@ h3 {
   margin-top: 0px;
 }
 
-.css-13cymwt-control {
-  border-color: #002966;
+.team-select {
+  border: 1px solid #002966;
 }

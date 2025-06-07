@@ -57,7 +57,7 @@ export function TeamMenu(props) {
         <div className='input-menu'>
             <h3>TEAM</h3>
 
-            <div>
+            <div className='team-select'>
                 <Select
                     options={state.selectPokemon}
                     onChange={(event, e) => handleChange(e)}

@@ -14,7 +14,7 @@ function App() {
   const [trainerType2, setTrainerType2] = useState('None');
   const [trainerSprite, setTrainerSprite] = useState('');
 
-  const [cardFrame, setCardFrame] = useState('custom-yellow');
+  const [cardFrame, setCardFrame] = useState('');
   const [cardCustomBG, setCardCustomBG] = useState('');
   const [selectedGame, setSelectedGame] = useState('Select game');
   const [availableColors, setAvailableColors] = useState([]);
@@ -76,8 +76,9 @@ function App() {
         <div className='card-area'>
           <CardArea
             reset={cardReset}
-            cardFrame={cardFrame} setCardFrame={setCardFrame}
-            cardCustomBG={cardCustomBG} setCardCustomBG={setCardCustomBG}
+            cardFrame={cardFrame}
+            trainerType1={trainerType1} trainerType2={trainerType2}
+            cardCustomBG={cardCustomBG}
           />
         </div>
 
