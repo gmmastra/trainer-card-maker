@@ -1,11 +1,12 @@
 /* eslint-disable import/first */
 import React from "react";
 const mergeImages = require('merge-images');
-import { CardPreview }  from "./CardPreview.jsx";
+import CardPreview from "./CardPreview";
 
 export function CardArea(props) {
     return (
         <>
+        {props.cardFrame}
             <div className='card-preview'>
                 <CardPreview cardFrame={props.cardFrame} />
             </div>

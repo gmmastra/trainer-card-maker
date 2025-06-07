@@ -14,7 +14,7 @@ function App() {
   const [trainerType2, setTrainerType2] = useState('None');
   const [trainerSprite, setTrainerSprite] = useState('');
 
-  const [cardFrame, setCardFrame] = useState('');
+  const [cardFrame, setCardFrame] = useState('custom-yellow');
   const [cardCustomBG, setCardCustomBG] = useState('');
   const [selectedGame, setSelectedGame] = useState('Select game');
   const [availableColors, setAvailableColors] = useState([]);
