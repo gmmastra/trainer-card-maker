@@ -1,9 +1,6 @@
 /* eslint-disable import/first */
-import React, { CSSProperties, useState, useEffect } from 'react';
 import { useRef } from "react";
-import axios from 'axios';
 import { toPng, toJpeg, toSvg } from "html-to-image";
-import TeamMemberSprite from "./TeamMemberSprite.js";
 
 export function CardArea(props) {
 
@@ -39,7 +36,7 @@ export function CardArea(props) {
                 <div className='sprite-list'>
                     {props.team === '' ? null : (
                         props.spriteList.map((sprite, index) => (
-                            <img className={`sprite-${index}`} src={sprite} />
+                            <div className={`sprite-${index} sprite-box`} style={{ backgroundImage: `url(${sprite})` }} />
                         ))
                     )}
                 </div>

@@ -1,9 +1,9 @@
-import React, { CSSProperties, useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import axios from 'axios';
 import Select from 'react-select'
 import { DndContext } from "@dnd-kit/core";
 import { arrayMove, SortableContext } from "@dnd-kit/sortable";
-import TeamMember from "./TeamMember.tsx";
+import TeamMember from "./TeamMember.js";
 
 //menu for following inputs: team and team order 
 //draggable dnd-kit team list heavily referenced from @kurniawanc
@@ -83,7 +83,10 @@ export function TeamMenu(props) {
                 <ul>
                     <SortableContext items={props.team}>
                         {props.team.map((pokemon) => (
-                            <TeamMember key={pokemon}>{pokemon}</TeamMember>
+                            <TeamMember key={pokemon} 
+                            pokemon={pokemon}
+                            team={props.team} setTeam={props.setTeam} setTeamOrder={props.setTeamOrder}
+                            spriteList={props.spriteList} setSpriteList= {props.setSpriteList} >{pokemon}</TeamMember>
                         ))}
                     </SortableContext>
                 </ul>
