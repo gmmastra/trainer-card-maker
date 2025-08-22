@@ -40,6 +40,7 @@ function App() {
     setCustom(false);
     setTeam([]);
     setTeamOrder([]);
+    setSpriteList([]);
   }
 
   return (

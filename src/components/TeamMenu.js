@@ -10,20 +10,18 @@ import TeamMember from "./TeamMember.js";
 //https://medium.com/@kurniawanc/create-sortable-drag-and-drop-in-react-js-using-dnd-kit-library-ba8b2917a6b5
 export function TeamMenu(props) {
 
+    const [newMember, setNewMember] = useState('');
     const [state, setState] = useState({
         selectPokemon: [],
         url: '',
         name: ''
     });
 
-    const [data, setData] = useState([]);
-
-    const [newMember, setNewMember] = useState('');
-
     useEffect(() => {
         getPokemon();
     }, []);
 
+    // fetches list of pokemon names from api endpoint
     async function getPokemon() {
         const res = await axios.get('https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0');
         const data = res.data.results;
@@ -35,22 +33,26 @@ export function TeamMenu(props) {
         setState({ selectPokemon: pokemon });
     }
 
+    // fetches sprite of pokemon with given name 
     async function getSprite(e) {
         const res = await axios.get(`https://pokeapi.co/api/v2/pokemon/${e}`);
         const data = res.data.results;
         props.setSpriteList([...props.spriteList, res.data.sprites.front_default]);
     }
 
+    // adds selected pokemon to team
     const handleChange = e => {
-        setNewMember(e.value);
-        const index = props.team.indexOf(e.value);
-        const spriteIndex = data;
-        if (index < 0) {
-            props.setTeam([...props.team, e.value]);
-            getSprite(e.value);
+        if (e != null) {
+            setNewMember(e.value);
+            const index = props.team.indexOf(e.value);
+            if (index < 0) {
+                props.setTeam([...props.team, e.value]);
+                getSprite(e.value);
+            }
         }
     };
 
+    // changes team order based on updated drag-and-drop order
     const reorderTeam = (e) => {
         if (!e.over) return;
 
@@ -83,10 +85,10 @@ export function TeamMenu(props) {
                 <ul>
                     <SortableContext items={props.team}>
                         {props.team.map((pokemon) => (
-                            <TeamMember key={pokemon} 
-                            pokemon={pokemon}
-                            team={props.team} setTeam={props.setTeam} setTeamOrder={props.setTeamOrder}
-                            spriteList={props.spriteList} setSpriteList= {props.setSpriteList} >{pokemon}</TeamMember>
+                            <TeamMember key={pokemon}
+                                pokemon={pokemon}
+                                team={props.team} setTeam={props.setTeam} setTeamOrder={props.setTeamOrder}
+                                spriteList={props.spriteList} setSpriteList={props.setSpriteList} >{pokemon}</TeamMember>
                         ))}
                     </SortableContext>
                 </ul>

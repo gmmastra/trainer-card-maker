@@ -6,6 +6,7 @@ export function CardArea(props) {
 
     const cardPreviewRef = useRef(null);
 
+    // converts 'card-preview' div to a downloadable image
     const htmlToImageConvert = () => {
         toPng(cardPreviewRef.current, { cacheBust: false })
             .then((dataUrl) => {
@@ -36,7 +37,7 @@ export function CardArea(props) {
                 <div className='sprite-list'>
                     {props.team === '' ? null : (
                         props.spriteList.map((sprite, index) => (
-                            <div className={`sprite-${index} sprite-box`} style={{ backgroundImage: `url(${sprite})` }} />
+                            <div className={`sprite-${index} sprite-box`} key={index} style={{ backgroundImage: `url(${sprite})` }} />
                         ))
                     )}
                 </div>

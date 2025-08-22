@@ -7,9 +7,9 @@ import DropdownButton from 'react-bootstrap/DropdownButton';
 // menu for following inputs: frame type/color
 export function FrameMenu(props) {
 
-    //card appearance, by game
+    // card appearance, by game
     const game = ['FireRed/LeafGreen', 'Ruby/Sapphire', 'Diamond/Pearl', 'Custom'];
-    //card appearance colors, by game
+    // card appearance colors, by game
     const colors = {
         'FireRed/LeafGreen': ['Blue', 'Brown', 'Gold', 'Green', 'Pink', 'Silver', 'Yellow'],
         'Ruby/Sapphire': ['Blue', 'Gold', 'Green', 'Moss', 'Pink', 'Red', 'Silver', 'Yellow'],
@@ -18,11 +18,10 @@ export function FrameMenu(props) {
     };
 
     const [show, setShow] = useState(false);
-
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
-    //sets selected style and appropriate color list
+    // sets selected style and appropriate color list
     const handleGameChange = (e) => {
         const game = e.target.value;
         props.setSelectedGame(game);
@@ -31,7 +30,7 @@ export function FrameMenu(props) {
         props.setCustom(false);
     };
 
-    //sets selected color
+    // sets selected color
     const handleColorChange = (e) => {
         props.setSelectedColor(e.target.value);
         props.setFrame(props.selectedGame.replace('/', '').toLowerCase() + '-' + e.target.value.toLowerCase());
@@ -72,6 +71,7 @@ export function FrameMenu(props) {
 
             </div>
 
+            {/* modal for uploading custom-frame backgrounds */}
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
                     <Modal.Title>UPLOAD IMAGE</Modal.Title>

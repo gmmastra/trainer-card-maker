@@ -7,8 +7,10 @@ const TeamMember = (props) => {
   const { attributes, listeners, setNodeRef, transform, transition } =
     useSortable({ id: props.children });
 
-  const [showMember, setShowMember] = React.useState(true);
+  // hides instance of team member if removed
+  const [hideMember, setHideMember] = React.useState(false);
 
+  // removes team member from all appropriate arrays
   function handleRemove(e) {
     const index = props.team.indexOf(props.pokemon);
     const newTeam = [...props.team.slice(0, index), ...props.team.slice(index + 1)];
@@ -16,13 +18,13 @@ const TeamMember = (props) => {
     props.setTeam(newTeam);
     props.setTeamOrder(newTeam);
     props.setSpriteList(newSpriteList);
-    setShowMember(false);
+    setHideMember(false);
   };
 
   return (
     <div>
       {
-        showMember ? <div
+        hideMember ? null : <div
           id={props.pokemon
           }
           ref={setNodeRef}
@@ -38,7 +40,7 @@ const TeamMember = (props) => {
             <RxHamburgerMenu style={{ margin: "0px 10px" }} /> {props.children}
             <button onMouseDown={handleRemove}>X</button>
           </div>
-        </div > : null}
+        </div >}
     </div>
   );
 };

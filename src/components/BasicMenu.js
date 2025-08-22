@@ -12,30 +12,29 @@ import TabList from '@mui/lab/TabList';
 import TabPanel from '@mui/lab/TabPanel';
 
 
-// menu for following inputs: name, friendcode, trainer type(s)
+// menu for following inputs: name, friendcode, trainer type(s), trainer sprite
 export function BasicMenu(props) {
 
-    //trainer types
+    // trainer types
     const types = ['None', 'Bug', 'Dark', 'Dragon', 'Electric', 'Fairy', 'Fight', 'Fire', 'Flying', 'Ghost', 'Grass', 'Ground', 'Ice', 'Normal', 'Poison', 'Psychic', 'Rock', 'Steel', 'Water', '???'];
 
+    // shows/hides sprite selection modal
     const [show, setShow] = useState(false);
-
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
-    //prevent typing alphabetical characters
+    const [value, setValue] = React.useState('1');
+    const handleChange = (event, newValue) => {
+        setValue(newValue);
+    };
+
+    // prevent typing alphabetical characters
     function handleCode(e) {
         const re = /^[0-9\b -]+$/;
         if (e.target.value === '' || re.test(e.target.value)) {
             props.setCode(e.target.value.substring(0, 12))
         }
     }
-
-    const [value, setValue] = React.useState('1');
-
-    const handleChange = (event, newValue) => {
-        setValue(newValue);
-    };
 
     return (
         <>
@@ -66,6 +65,7 @@ export function BasicMenu(props) {
                         ))}
                     </DropdownButton>
                 </div>
+
                 <div className='sprite'>
                     SPRITE:
                     <button onClick={handleShow}>SELECT</button>

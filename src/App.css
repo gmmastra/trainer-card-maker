@@ -1,3 +1,10 @@
+@font-face {
+  font-family: "Pokemon Pixel Font Regular";
+  src: url(../public/assets/fonts/pokemon_pixel_font.ttf) format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
   background-color: #f1f1f1;
   color: #002966;
@@ -79,16 +86,18 @@ body {
 .card-preview p {
   position: absolute;
   z-index: 5;
+  font-family: "Pokemon Pixel Font Regular";
+  font-size: 28px;
 }
 
 .code {
   left: 270px;
-  top: 15px;
+  top: 10px;
 }
 
 .name {
   left: 80px;
-  top: 52px;
+  top: 46px;
 }
 
 .diamondpearl p {
@@ -194,23 +203,30 @@ h3 {
   z-index: 10;
 }
 
-.sprite-0, .sprite-1, .sprite-2 {
+.sprite-0,
+.sprite-1,
+.sprite-2 {
   top: 94px;
 }
 
-.sprite-3, .sprite-4, .sprite-5 {
+.sprite-3,
+.sprite-4,
+.sprite-5 {
   top: 152px;
 }
 
-.sprite-0, .sprite-3 {
+.sprite-0,
+.sprite-3 {
   left: 15px;
 }
 
-.sprite-1, .sprite-4 {
+.sprite-1,
+.sprite-4 {
   left: 108px;
 }
 
-.sprite-2, .sprite-5 {
+.sprite-2,
+.sprite-5 {
   left: 202px;
 }
 
