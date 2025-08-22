@@ -68,12 +68,32 @@ body {
 }
 
 .card-preview {
-  height: 140px;
-  width: 228px;
+  height: 296px;
+  width: 456px;
 }
 
 .card-preview img {
   position: absolute;
+}
+
+.card-preview p {
+  position: absolute;
+  z-index: 5;
+}
+
+.code {
+  left: 270px;
+  top: 15px;
+}
+
+.name {
+  left: 80px;
+  top: 52px;
+}
+
+.diamondpearl p {
+  left: 100px;
+  top: 20px;
 }
 
 .card-options {
@@ -81,14 +101,14 @@ body {
   flex-direction: column;
   gap: 10px;
   position: absolute;
-  top: 170px;
+  top: 300px;
   right: 60px;
 }
 
 .card-frame {
   z-index: 1;
   right: 0px;
-  bottom: 15px;
+  top: -10px;
   margin-right: 60px;
   margin-bottom: 15px;
 }
@@ -139,6 +159,10 @@ body {
   overflow: scroll;
 }
 
+.team-select {
+  text-transform: capitalize;
+}
+
 .team-member {
   border: 1px #002966 solid;
   padding: 5px;
@@ -150,4 +174,27 @@ h3 {
 
 .team-select {
   border: 1px solid #002966;
+}
+
+.sprite-list {
+  display: flex;
+}
+
+.sprite-list img {
+  position: absolute;
+  z-index: 10;
+}
+
+.sprite-0 {
+  left: 10px;
+  top: 65px;
+}
+.sprite-1 {
+  left: 106px;
+  top: 65px;
+}
+
+.sprite-2 {
+  left: 200px;
+  top: 65px;
 }

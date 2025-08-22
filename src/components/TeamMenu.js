@@ -12,33 +12,44 @@ export function TeamMenu(props) {
 
     const [state, setState] = useState({
         selectPokemon: [],
-        id: '',
+        url: '',
         name: ''
     });
 
-    const [newMember, setNewMember] = useState('new');
+    const [data, setData] = useState([]);
+
+    const [newMember, setNewMember] = useState('');
 
     useEffect(() => {
         getPokemon();
     }, []);
 
     async function getPokemon() {
-        const res = await axios.get('https://jsonplaceholder.typicode.com/users');
-        const data = res.data;
+        const res = await axios.get('https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0');
+        const data = res.data.results;
 
         const pokemon = data.map(d => ({
-            value: d.id,
+            value: d.name,
             label: d.name
         }));
         setState({ selectPokemon: pokemon });
     }
 
-    function handleChange(e) {
-        const index = props.team.indexOf(newMember);
-        if (index < 0) {
-            props.setTeam([...props.team, newMember]);
-        }
+    async function getSprite(e) {
+        const res = await axios.get(`https://pokeapi.co/api/v2/pokemon/${e}`);
+        const data = res.data.results;
+        props.setSpriteList([...props.spriteList, res.data.sprites.front_default]);
     }
+
+    const handleChange = e => {
+        setNewMember(e.value);
+        const index = props.team.indexOf(e.value);
+        const spriteIndex = data;
+        if (index < 0) {
+            props.setTeam([...props.team, e.value]);
+            getSprite(e.value);
+        }
+    };
 
     const reorderTeam = (e) => {
         if (!e.over) return;
@@ -48,6 +59,7 @@ export function TeamMenu(props) {
                 const oldIndex = props.team.indexOf(e.active.id.toString());
                 const newIndex = props.team.indexOf(e.over.id.toString());
                 props.setTeamOrder(arrayMove(props.team, oldIndex, newIndex));
+                props.setSpriteList(arrayMove(props.spriteList, oldIndex, newIndex));
                 return arrayMove(props.team, oldIndex, newIndex);
             });
         }
@@ -60,9 +72,10 @@ export function TeamMenu(props) {
             <div className='team-select'>
                 <Select
                     options={state.selectPokemon}
-                    onChange={(event, e) => handleChange(e)}
+                    onChange={handleChange}
                     placeholder="Search..."
                     isClearable={true}
+                    value={newMember}
                 />
             </div>
 

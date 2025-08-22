@@ -14,7 +14,7 @@ function App() {
   const [trainerType2, setTrainerType2] = useState('None');
   const [trainerSprite, setTrainerSprite] = useState('');
 
-  const [cardFrame, setCardFrame] = useState('');
+  const [cardFrame, setCardFrame] = useState('default');
   const [cardCustomBG, setCardCustomBG] = useState('');
   const [selectedGame, setSelectedGame] = useState('Select game');
   const [availableColors, setAvailableColors] = useState([]);
@@ -23,6 +23,7 @@ function App() {
 
   const [team, setTeam] = useState([]);
   const [teamOrder, setTeamOrder] = useState([]);
+  const [spriteList, setSpriteList] = useState([]);
 
   //resets all user inputs
   function cardReset() {
@@ -31,7 +32,7 @@ function App() {
     setTrainerType1('None');
     setTrainerType2('None');
     setTrainerSprite('');
-    setCardFrame('');
+    setCardFrame('default');
     setCardCustomBG('');
     setSelectedGame('Select game');
     setSelectedColor('Select color');
@@ -49,7 +50,7 @@ function App() {
       </div>
 
       <div className='maker'>
-        {teamOrder}
+
         {/* handles user inputs */}
         <div className="menu">
           <BasicMenu
@@ -69,6 +70,7 @@ function App() {
           <TeamMenu
             team={team} setTeam={setTeam}
             setTeamOrder={setTeamOrder}
+            spriteList={spriteList} setSpriteList={setSpriteList}
           />
         </div>
 
@@ -77,8 +79,11 @@ function App() {
           <CardArea
             reset={cardReset}
             cardFrame={cardFrame}
+            name={trainerName} friendcode={trainerCode}
             trainerType1={trainerType1} trainerType2={trainerType2}
             cardCustomBG={cardCustomBG}
+            team={teamOrder}
+            spriteList={spriteList}
           />
         </div>
 

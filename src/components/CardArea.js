@@ -1,6 +1,9 @@
 /* eslint-disable import/first */
+import React, { CSSProperties, useState, useEffect } from 'react';
 import { useRef } from "react";
+import axios from 'axios';
 import { toPng, toJpeg, toSvg } from "html-to-image";
+import TeamMemberSprite from "./TeamMemberSprite.js";
 
 export function CardArea(props) {
 
@@ -21,7 +24,9 @@ export function CardArea(props) {
 
     return (
         <>
-            <div className='card-preview' ref={cardPreviewRef}>
+            <div className={`card-preview ${props.cardFrame.split('-')[0]}`} ref={cardPreviewRef}>
+                <p className="code">{props.friendcode}</p>
+                <p className="name">{props.name}</p>
                 {props.trainerType1 === 'None' ? null : (
                     <img src={process.env.PUBLIC_URL + `/assets/types/${props.trainerType1}.png`} className='trainer-type1' />
                 )}
@@ -31,7 +36,14 @@ export function CardArea(props) {
                 {props.cardFrame === '' ? null : (
                     <img src={process.env.PUBLIC_URL + `/assets/cards/${props.cardFrame}.png`} className='card-frame' />
                 )}
-                <div className='card-preview-bg'/>
+                <div className='sprite-list'>
+                    {props.team === '' ? null : (
+                        props.spriteList.map((sprite, index) => (
+                            <img className={`sprite-${index}`} src={sprite} />
+                        ))
+                    )}
+                </div>
+                <div className='card-preview-bg' />
             </div>
             <div className='card-options'>
                 <button onClick={htmlToImageConvert}>DOWNLOAD</button>
