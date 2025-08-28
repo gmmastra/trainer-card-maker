@@ -68,7 +68,7 @@ export function FrameMenu(props) {
                     BACKGROUND IMAGE:
                     <button onClick={handleShow}>SELECT</button>
                 </div>) : ('')}
-
+                {props.customBG}
             </div>
 
             {/* modal for uploading custom-frame backgrounds */}
@@ -77,7 +77,8 @@ export function FrameMenu(props) {
                     <Modal.Title>UPLOAD IMAGE</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    URL: <input value={''} />
+                    URL: <input value={props.customBG} onChange={e => props.setCustomBG(e.target.value)} />
+                    <button onClick={() => props.setCustomBG('')}>X</button>
                 </Modal.Body>
                 <Modal.Footer>
                     <Button variant="primary" onClick={handleClose}>

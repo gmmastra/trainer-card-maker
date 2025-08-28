@@ -62,7 +62,7 @@ function App() {
           />
           <FrameMenu
             setFrame={setCardFrame}
-            setCustomBG={setCardCustomBG}
+            customBG={cardCustomBG} setCustomBG={setCardCustomBG}
             selectedGame={selectedGame} setSelectedGame={setSelectedGame}
             selectedColor={selectedColor} setSelectedColor={setSelectedColor}
             availableColors={availableColors} setAvailableColors={setAvailableColors}

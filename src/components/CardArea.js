@@ -1,6 +1,6 @@
 /* eslint-disable import/first */
 import { useRef } from "react";
-import { toPng, toJpeg, toSvg } from "html-to-image";
+import { toPng } from "html-to-image";
 
 export function CardArea(props) {
 
@@ -26,13 +26,13 @@ export function CardArea(props) {
                 <p className="code">{props.friendcode}</p>
                 <p className="name">{props.name}</p>
                 {props.trainerType1 === 'None' ? null : (
-                    <img src={process.env.PUBLIC_URL + `/assets/types/${props.trainerType1}.png`} className='trainer-type1' />
+                    <img alt='' src={process.env.PUBLIC_URL + `/assets/types/${props.trainerType1}.png`} className='trainer-type1' />
                 )}
                 {props.trainerType2 === 'None' ? null : (
-                    <img src={process.env.PUBLIC_URL + `/assets/types/${props.trainerType2}.png`} className='trainer-type2' />
+                    <img alt='' src={process.env.PUBLIC_URL + `/assets/types/${props.trainerType2}.png`} className='trainer-type2' />
                 )}
                 {props.cardFrame === '' ? null : (
-                    <img src={process.env.PUBLIC_URL + `/assets/cards/${props.cardFrame}.png`} className='card-frame' />
+                    <img alt='' src={process.env.PUBLIC_URL + `/assets/cards/${props.cardFrame}.png`} className='card-frame' />
                 )}
                 <div className='sprite-list'>
                     {props.team === '' ? null : (
@@ -42,7 +42,8 @@ export function CardArea(props) {
                     )}
                 </div>
                 <div className='card-preview-bg' />
-            </div>
+                <div className='card-custom-bg' style={{ background: `url(${props.cardCustomBG}) no-repeat`, backgroundSize: 'cover' }} />
+            </div >
             <div className='card-options'>
                 <button onClick={htmlToImageConvert}>DOWNLOAD</button>
                 <button type="submit">RANDOMIZE</button>
