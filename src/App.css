@@ -150,12 +150,16 @@ body {
 
 .trainer-type1 {
   z-index: 2;
-  right: 100px;
+  right: 165px;
+  top: 55px;
+  transform: scale(70%);
 }
 
 .trainer-type2 {
   z-index: 2;
-  right: 65px;
+  right: 117px;
+  top: 55px;
+  transform: scale(70%);
 }
 
 .card-preview-bg {
@@ -194,6 +198,44 @@ body {
   overflow: scroll;
 }
 
+.badge-list {
+  position: absolute;
+  z-index: 20;
+  bottom: 85px;
+}
+
+.badge-0 {
+  left: 30px;
+}
+
+.badge-1 {
+  left: 80px;
+}
+
+.badge-2 {
+  left: 130px;
+}
+
+.badge-3 {
+  left: 175px;
+}
+
+.badge-4 {
+  left: 225px;
+}
+
+.badge-5 {
+  left: 270px;
+}
+
+.badge-6 {
+  left: 320px;
+}
+
+.badge-7 {
+  left: 365px;
+}
+
 .team-select {
   text-transform: capitalize;
 }
@@ -214,6 +256,20 @@ body {
 
 h3 {
   margin-top: 0px;
+}
+
+details {
+  border: 1px solid #002966;
+  padding: 5px;
+}
+
+label span {
+  padding-left: 10px;
+}
+
+input[type='checkbox'] {
+  border: 1px solid #002966 !important;
+  overflow: hidden;
 }
 
 .team-select {

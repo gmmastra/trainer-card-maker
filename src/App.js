@@ -5,6 +5,7 @@ import { BasicMenu } from "./components/BasicMenu";
 import { FrameMenu } from "./components/FrameMenu";
 import { TeamMenu } from './components/TeamMenu';
 import { CardArea } from "./components/CardArea";
+import { BadgeMenu } from './components/BadgeMenu';
 
 function App() {
 
@@ -25,6 +26,8 @@ function App() {
   const [teamOrder, setTeamOrder] = useState([]);
   const [spriteList, setSpriteList] = useState([]);
 
+  const [badgeList, setBadgeList] = useState([]);
+
   //resets all user inputs
   function cardReset() {
     setTrainerName('');
@@ -40,7 +43,14 @@ function App() {
     setCustom(false);
     setTeam([]);
     setTeamOrder([]);
-    setSpriteList([]);
+    setSpriteList([])
+    setBadgeList([]);
+    var w = document.getElementsByTagName('input');
+    for (var i = 0; i < w.length; i++) {
+      if (w[i].type == 'checkbox') {
+        w[i].checked = false;
+      }
+    }
   }
 
   return (
@@ -73,6 +83,8 @@ function App() {
             setTeamOrder={setTeamOrder}
             spriteList={spriteList} setSpriteList={setSpriteList}
           />
+          <BadgeMenu
+            badgeList={badgeList} setBadgeList={setBadgeList} />
         </div>
 
         {/* displays card preview and download/reset options */}
@@ -85,6 +97,7 @@ function App() {
             cardCustomBG={cardCustomBG}
             team={teamOrder}
             spriteList={spriteList}
+            badgeList={badgeList}
           />
         </div>
 

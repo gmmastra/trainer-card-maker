@@ -6,17 +6,15 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Box from '@mui/material/Box';
 import Tab from '@mui/material/Tab';
-import Tabs from '@mui/material/Tabs';
 import TabContext from '@mui/lab/TabContext';
 import TabList from '@mui/lab/TabList';
 import TabPanel from '@mui/lab/TabPanel';
-
 
 // menu for following inputs: name, friendcode, trainer type(s), trainer sprite
 export function BasicMenu(props) {
 
     // trainer types
-    const types = ['None', 'Bug', 'Dark', 'Dragon', 'Electric', 'Fairy', 'Fight', 'Fire', 'Flying', 'Ghost', 'Grass', 'Ground', 'Ice', 'Normal', 'Poison', 'Psychic', 'Rock', 'Steel', 'Water', '???'];
+    const types = ['None', 'Bug', 'Dark', 'Dragon', 'Electric', 'Fairy', 'Fight', 'Fire', 'Flying', 'Ghost', 'Grass', 'Ground', 'Ice', 'Normal', 'Poison', 'Psychic', 'Rock', 'Steel', 'Water', 'Null'];
 
     // shows/hides sprite selection modal
     const [show, setShow] = useState(false);

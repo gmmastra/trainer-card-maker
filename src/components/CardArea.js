@@ -8,6 +8,7 @@ export function CardArea(props) {
 
     // converts 'card-preview' div to a downloadable image
     const htmlToImageConvert = () => {
+        console.log('donwloaded');
         toPng(cardPreviewRef.current, { cacheBust: false })
             .then((dataUrl) => {
                 const link = document.createElement("a");
@@ -38,6 +39,13 @@ export function CardArea(props) {
                     {props.team === '' ? null : (
                         props.spriteList.map((sprite, index) => (
                             <div className={`sprite-${index} sprite-box`} key={index} style={{ backgroundImage: `url(${sprite})` }} />
+                        ))
+                    )}
+                </div>
+                <div className='badge-list'>
+                    {props.badgeList === '' ? null : (
+                        props.badgeList.map((badge, index) => (
+                            <img alt='' className={`badge-${index}`} src={process.env.PUBLIC_URL + `/assets/badges/${badge}.png`} />
                         ))
                     )}
                 </div>
