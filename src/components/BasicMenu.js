@@ -17,7 +17,8 @@ export function BasicMenu(props) {
     const types = ['None', 'Bug', 'Dark', 'Dragon', 'Electric', 'Fairy', 'Fight', 'Fire', 'Flying', 'Ghost', 'Grass', 'Ground', 'Ice', 'Normal', 'Poison', 'Psychic', 'Rock', 'Steel', 'Water', 'Null'];
 
     // gen 1/2 sprite file names
-    const gen1Files = ['Red_2', 'Agatha', 'Beauty', 'Biker', 'Bird_Keeper', 'Blackbelt', 'Blaine', 'Blue_1', 'Blue_2', 'Blue_3', 'Brock', 'Bruno', 'Bug_Catcher', 'Burglar', 'Channeler'];
+    const gen1Files = ['Agatha', 'Beauty', 'Biker', 'Bird_Keeper', 'Blackbelt', 'Blaine', 'Blue_1', 'Blue_2', 'Blue_3', 'Brock', 'Bruno', 'Bug_Catcher', 'Burglar', 'Channeler', 'Cooltrainer_F', 'Cooltrainer_M', 'Cue_Ball', 'Engineer', 'Erika', 'Fisherman', 'Gambler', 'Gentleman', 'Giovanni', 'Hiker', 'Jr_Trainer_F', 'Jr_Trainer_M', 'Juggler', 'Koga', 'Lance', 'Lass', 'Lorelei', 'Lt_Surge', 'Misty', 'Oak', 'PokéManiac', 'Psychic', 'Red_1', 'Red_2', 'Rocker', 'Rocket', 'Sabrina', 'Sailor', 'Scientist', 'Super_Nerd', 'Swimmer', 'Tamer', 'Youngster'];
+    const gen2Files = ['Beauty', 'Biker', 'Bird_Keeper', 'Blackbelt', 'Blaine', 'Blue', 'Boarder', 'Brock', 'Bruno', 'Bug_Catcher'];
 
     // shows/hides sprite selection modal
     const [show, setShow] = useState(false);
@@ -104,9 +105,14 @@ export function BasicMenu(props) {
                                         <img alt={`1/Spr_RG_${sprite}`} src={gen1[sprite]} onClick={e => handleTrainer(e)} />
                                     ))}
                                 </div>
-
                             </TabPanel>
-                            <TabPanel value="2">Item Two</TabPanel>
+                            <TabPanel value="2">
+                                <div className='trainer-sprite-list'>
+                                    {gen2Files.map((sprite, index) => (
+                                        <img alt={`2/Spr_GS_${sprite}`} src={gen2[sprite]} onClick={e => handleTrainer(e)} />
+                                    ))}
+                                </div>
+                            </TabPanel>
                             <TabPanel value="3">Item Three</TabPanel>
                         </TabContext>
                     </Box>

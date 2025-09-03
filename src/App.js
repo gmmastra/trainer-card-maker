@@ -71,7 +71,6 @@ function App() {
             type2={trainerType2} setType2={setTrainerType2}
             setTrainerSprite={setTrainerSprite}
           />
-          {trainerSprite}
           <FrameMenu
             setFrame={setCardFrame}
             customBG={cardCustomBG} setCustomBG={setCardCustomBG}

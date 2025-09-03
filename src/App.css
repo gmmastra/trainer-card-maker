@@ -14,7 +14,10 @@ body {
 @media (max-width: 1200px) {
   .menu {
     width: 100% !important;
-    margin-top: 370px;
+    margin-top: 430px !important;
+    position: fixed;
+    overflow: scroll !important;
+    height: calc(100% - 430px);
   }
 
   .card-options {
@@ -32,8 +35,13 @@ body {
   display: flex;
   justify-content: space-between;
   font-size: 25px;
-  padding-right: 20px;
   border-bottom: 1px #002966 solid;
+  position: fixed;
+  width: 100%;
+  background-color: #f1f1f1;
+  margin-top: -10px;
+  padding: 10px 20px 0;
+  z-index: 100;
 }
 
 .header svg {
@@ -47,9 +55,7 @@ body {
 
 .menu {
   width: 40%;
-  height: calc(100% - 70px);
-  overflow: scroll;
-  position: fixed;
+  margin-top: 70px;
   padding: 0px 20px;
 }
 
@@ -223,8 +229,7 @@ body {
 }
 
 .trainer-sprite-list img:hover {
-  transform: scale(1.7);
-  opacity: 80%;
+  transform: scale(1.8);
   image-rendering: pixelated;
   cursor: pointer;
 }
