@@ -2,7 +2,7 @@
 
 export function BadgeMenu(props) {
 
-    {/** handles adding/removing each checkbox element */ }
+    // handles adding/removing each checkbox element
     const handleCheck = (e) => {
         if (document.getElementById(e.target.id).checked && props.badgeList.length < 8) {
             const newList = [...props.badgeList, e.target.value];
@@ -20,7 +20,6 @@ export function BadgeMenu(props) {
     return (
         <div className='input-menu' style={{ marginBottom: '50px' }}>
             <h3>BADGES</h3>
-            {props.badgeList}
             <details>
                 <summary>FireRed/LeafGreen</summary>
                 <label><input type="checkbox" id="1" value="fireredleafgreen-1" onClick={e => handleCheck(e)} /><span>Boulder Badge</span></label>

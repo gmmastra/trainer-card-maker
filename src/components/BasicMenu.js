@@ -16,15 +16,16 @@ export function BasicMenu(props) {
     // trainer types
     const types = ['None', 'Bug', 'Dark', 'Dragon', 'Electric', 'Fairy', 'Fight', 'Fire', 'Flying', 'Ghost', 'Grass', 'Ground', 'Ice', 'Normal', 'Poison', 'Psychic', 'Rock', 'Steel', 'Water', 'Null'];
 
+    // gen 1/2 sprite file names
+    const gen1Files = ['Red_2', 'Agatha', 'Beauty', 'Biker', 'Bird_Keeper', 'Blackbelt', 'Blaine', 'Blue_1', 'Blue_2', 'Blue_3', 'Brock', 'Bruno', 'Bug_Catcher', 'Burglar', 'Channeler'];
+
     // shows/hides sprite selection modal
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
     const [value, setValue] = React.useState('1');
-    const handleChange = (event, newValue) => {
-        setValue(newValue);
-    };
+    const handleChange = (event, newValue) => { setValue(newValue); };
 
     // prevent typing alphabetical characters
     function handleCode(e) {
@@ -32,6 +33,18 @@ export function BasicMenu(props) {
         if (e.target.value === '' || re.test(e.target.value)) {
             props.setCode(e.target.value.substring(0, 12))
         }
+    }
+
+    // sets trainer sprite based on selected
+    const handleTrainer = (e) => { props.setTrainerSprite(e.target.alt); }
+
+    // imports all trainer sprites from their respective folders
+    const gen1 = importAll(require.context('../assets/trainers/1/', false, /\.(png)$/));
+    const gen2 = importAll(require.context('../assets/trainers/2/', false, /\.(png)$/));
+    function importAll(r) {
+        let images = {};
+        r.keys().map((item) => { images[item.replace('./', '').replace('Spr_RG_', '').replace('Spr_GS_', '').replace('.png', '')] = r(item); });
+        return images;
     }
 
     return (
@@ -85,7 +98,14 @@ export function BasicMenu(props) {
                                     <Tab label="GEN 3" value="3" />
                                 </TabList>
                             </Box>
-                            <TabPanel value="1">Item One</TabPanel>
+                            <TabPanel value="1">
+                                <div className='trainer-sprite-list'>
+                                    {gen1Files.map((sprite, index) => (
+                                        <img alt={`1/Spr_RG_${sprite}`} src={gen1[sprite]} onClick={e => handleTrainer(e)} />
+                                    ))}
+                                </div>
+
+                            </TabPanel>
                             <TabPanel value="2">Item Two</TabPanel>
                             <TabPanel value="3">Item Three</TabPanel>
                         </TabContext>

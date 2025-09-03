@@ -32,6 +32,9 @@ export function CardArea(props) {
                 {props.trainerType2 === 'None' ? null : (
                     <img alt='' src={process.env.PUBLIC_URL + `/assets/types/${props.trainerType2}.png`} className='trainer-type2' />
                 )}
+                {props.trainerSprite === '' ? null : (
+                    <img alt='' src={process.env.PUBLIC_URL + `/assets/trainers/${props.trainerSprite}.png`} className='trainer-sprite' />
+                )}
                 {props.cardFrame === '' ? null : (
                     <img alt='' src={process.env.PUBLIC_URL + `/assets/cards/${props.cardFrame}.png`} className='card-frame' />
                 )}

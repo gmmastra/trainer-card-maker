@@ -47,7 +47,7 @@ function App() {
     setBadgeList([]);
     var w = document.getElementsByTagName('input');
     for (var i = 0; i < w.length; i++) {
-      if (w[i].type == 'checkbox') {
+      if (w[i].type === 'checkbox') {
         w[i].checked = false;
       }
     }
@@ -69,7 +69,9 @@ function App() {
             code={trainerCode} setCode={setTrainerCode}
             type={trainerType1} setType={setTrainerType1}
             type2={trainerType2} setType2={setTrainerType2}
+            setTrainerSprite={setTrainerSprite}
           />
+          {trainerSprite}
           <FrameMenu
             setFrame={setCardFrame}
             customBG={cardCustomBG} setCustomBG={setCardCustomBG}
@@ -92,9 +94,10 @@ function App() {
           <CardArea
             reset={cardReset}
             cardFrame={cardFrame}
+            cardCustomBG={cardCustomBG}
             name={trainerName} friendcode={trainerCode}
             trainerType1={trainerType1} trainerType2={trainerType2}
-            cardCustomBG={cardCustomBG}
+            trainerSprite={trainerSprite}
             team={teamOrder}
             spriteList={spriteList}
             badgeList={badgeList}
