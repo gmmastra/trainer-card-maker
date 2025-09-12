@@ -102,8 +102,15 @@ function App() {
             badgeList={badgeList}
           />
         </div>
-
       </div>
+
+      <div className='alert'>
+        <span><strong>HEADS-UP!</strong></span>
+        <button onClick={() => { document.getElementsByClassName("alert")[0].style.display = 'none'; }}>X</button>
+        <p>Currently, the library this site relies on (html-to-image) is having issues on Firefox.
+          Please use a different browser if you want to download your image!</p>
+      </div>
+
     </div>
   );
 }

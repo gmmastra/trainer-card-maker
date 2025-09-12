@@ -33,6 +33,24 @@ body {
   }
 }
 
+.alert {
+  border: 1px solid #002966;
+  border-radius: 0px;
+  width: 400px;
+  position: fixed;
+  right: 20px;
+  bottom: 0;
+  background-color: #f1f1f1;
+}
+
+.alert button {
+  float: right;
+}
+
+.alert p {
+  margin: 10px;
+}
+
 .maker {
   display: flex;
   gap: 10px;
