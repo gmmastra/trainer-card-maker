@@ -18,7 +18,8 @@ export function BasicMenu(props) {
 
     // gen 1/2 sprite file names
     const gen1Files = ['Agatha', 'Beauty', 'Biker', 'Bird_Keeper', 'Blackbelt', 'Blaine', 'Blue_1', 'Blue_2', 'Blue_3', 'Brock', 'Bruno', 'Bug_Catcher', 'Burglar', 'Channeler', 'Cooltrainer_F', 'Cooltrainer_M', 'Cue_Ball', 'Engineer', 'Erika', 'Fisherman', 'Gambler', 'Gentleman', 'Giovanni', 'Hiker', 'Jr_Trainer_F', 'Jr_Trainer_M', 'Juggler', 'Koga', 'Lance', 'Lass', 'Lorelei', 'Lt_Surge', 'Misty', 'Oak', 'PokéManiac', 'Psychic', 'Red_1', 'Red_2', 'Rocker', 'Rocket', 'Sabrina', 'Sailor', 'Scientist', 'Super_Nerd', 'Swimmer', 'Tamer', 'Youngster'];
-    const gen2Files = ['Beauty', 'Biker', 'Bird_Keeper', 'Blackbelt', 'Blaine', 'Blue', 'Boarder', 'Brock', 'Bruno', 'Bug_Catcher'];
+    const gen2Files = ['Beauty', 'Biker', 'Bird_Keeper', 'Blackbelt', 'Blaine', 'Blue', 'Boarder', 'Brock', 'Bruno', 'Bug_Catcher', 'Bugsy', 'Burglar', 'Camper', 'Chuck', 'Clair', 'Cooltrainer_F', 'Cooltrainer_M', 'Erika', 'Ethan', 'Falkner', 'Firebreather', 'Fisher_JP', 'Gentleman', 'Guitarist', 'Hiker', 'Janine', 'Jasmine', 'Juggler', 'Karen', 'Kimono_Girl', 'Koga', 'Lance', 'Lass', 'Lt_Surge', 'Medium_JP', 'Misty', 'Morty', 'Oak', 'Officer', 'Picnicker', 'Pokéfan_M', 'Pokéfan_F', 'PokéManiac', 'Pryce', 'Psychic', 'Red', 'Rocket_Executive_F', 'Rocket_Executive_M', 'Rocket_Grunt_M', 'Rocket_Grunt_F', 'Sabrina', 'Sage_JP', 'Sailor', 'Schoolboy', 'Scientist', 'Silver_1', 'Silver_2', 'Skier', 'Super_Nerd', 'Swimmer_F_JP', 'Swimmer_M', 'Teacher', 'Twins', 'Whitney', 'Will', 'Youngster'];
+    const gen3Files = ['Anabel', 'Archie', 'Aroma_Lady', 'Battle_Girl', 'Beauty', 'Bird_Keeper', 'Birch', 'Black_Belt', 'Brandon', 'Brawly', 'Brendan', 'Bug_Catcher', 'Bug_Maniac', 'Camper', 'Collector', 'Cooltrainer_F', 'Cooltrainer_M', 'Dragon_Tamer', 'Drake', 'Expert_F', 'Expert_M', 'Fisherman', 'Flannery', 'Gentleman', 'Glacia', 'Greta', 'Guitarist', 'Hex_Maniac', 'Hiker', 'Interviewer', 'Juan', 'Kindler', 'Lady', 'Lass', 'Lucy', 'Matt', 'Maxie', 'May', 'Ninja_Boy', 'Noland', 'Norman', 'Old_Couple', 'Parasol_Lady', 'Phoebe', 'Picnicker', 'Pokéfan_F', 'Pokéfan_M', 'PokéManiac', 'Pokémon_Breeder_F', 'Pokémon_Breeder_M', 'Pokémon_Ranger_F', 'Pokémon_Ranger_M', 'Psychic_F', 'Psychic_M', 'Rich_Boy', 'Roxanne', 'Ruin_Maniac', 'Sailor', 'School_Kid_F', 'School_Kid_M', 'Shelly', 'Sidney', 'Spenser', 'Steven', 'Tabitha', 'Team_Aqua_Grunt_F', 'Team_Aqua_Grunt_M', 'Team_Magma_Grunt_F', 'Team_Magma_Grunt_M', 'Tuber_F', 'Tuber_M', 'Tucker', 'Wallace', 'Wally', 'Wattson', 'Winona', 'Youngster'];
 
     // shows/hides sprite selection modal
     const [show, setShow] = useState(false);
@@ -42,9 +43,10 @@ export function BasicMenu(props) {
     // imports all trainer sprites from their respective folders
     const gen1 = importAll(require.context('../assets/trainers/1/', false, /\.(png)$/));
     const gen2 = importAll(require.context('../assets/trainers/2/', false, /\.(png)$/));
+    const gen3 = importAll(require.context('../assets/trainers/3/', false, /\.(png)$/));
     function importAll(r) {
         let images = {};
-        r.keys().map((item) => { images[item.replace('./', '').replace('Spr_RG_', '').replace('Spr_GS_', '').replace('.png', '')] = r(item); });
+        r.keys().map((item) => { images[item.replace('./', '').replace('Spr_RG_', '').replace('Spr_GS_', '').replace('Spr_RS_', '').replace('.png', '')] = r(item); });
         return images;
     }
 
@@ -116,7 +118,14 @@ export function BasicMenu(props) {
                                     ))}
                                 </div>
                             </TabPanel>
-                            <TabPanel value="3">Item Three</TabPanel>
+                            <TabPanel value="3">
+                                <div className='trainer-sprite-list'>
+                                    {gen3Files.map((sprite, index) => (
+                                        <img alt={`3/Spr_RS_${sprite}`} src={gen3[sprite]} onClick={e => handleTrainer(e)} />
+                                    ))}
+                                </div>
+
+                            </TabPanel>
                         </TabContext>
                     </Box>
                 </Modal.Body>
