@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './App.css';
-import { SiKofi } from "react-icons/si";
+import { FaGithub } from "react-icons/fa";
 import { BasicMenu } from "./components/BasicMenu";
 import { FrameMenu } from "./components/FrameMenu";
 import { TeamMenu } from './components/TeamMenu';
@@ -56,7 +56,7 @@ function App() {
   return (
     <div className="App">
       <div className='header'>
-        <a href='https://ko-fi.com/rizsnt' target='_blank' rel="noreferrer"><SiKofi /></a>
+        <a href='https://github.com/gmmastra' target='_blank' rel="noreferrer"><FaGithub /></a>
         <p>POKEMON TRAINER CARD MAKER</p>
       </div>
 

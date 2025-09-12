@@ -93,7 +93,10 @@ export function BasicMenu(props) {
                     <Box sx={{ width: '100%', typography: 'body1' }}>
                         <TabContext value={value}>
                             <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-                                <TabList onChange={handleChange} aria-label="lab API tabs example">
+                                <TabList onChange={handleChange}
+                                    slotProps={{ indicator: { sx: { backgroundColor: '#002966' }, }, }}
+                                    sx={{ '& .Mui-selected': { border: '1px solid #002966', color: '#002966 !important' } }}
+                                >
                                     <Tab label="GEN 1" value="1" />
                                     <Tab label="GEN 2" value="2" />
                                     <Tab label="GEN 3" value="3" />

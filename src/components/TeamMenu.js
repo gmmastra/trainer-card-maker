@@ -45,7 +45,7 @@ export function TeamMenu(props) {
         if (e != null) {
             setNewMember(e.value);
             const index = props.team.indexOf(e.value);
-            if (index < 0) {
+            if (index < 0 && props.team.length < 6) {
                 props.setTeam([...props.team, e.value]);
                 getSprite(e.value);
             }

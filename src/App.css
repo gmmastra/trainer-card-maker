@@ -39,7 +39,7 @@ body {
   position: fixed;
   width: 100%;
   background-color: #f1f1f1;
-  margin-top: -10px;
+  margin: -10px 0 0 -10px;
   padding: 10px 20px 0;
   z-index: 100;
 }
@@ -57,6 +57,11 @@ body {
   width: 40%;
   margin-top: 70px;
   padding: 0px 20px;
+}
+
+.modal-body {
+  overflow: hidden;
+  height: 60vh;
 }
 
 .modal-body input {
@@ -89,6 +94,32 @@ body {
   padding-left: 0px;
 }
 
+.btn-primary,
+.btn-primary:focus {
+  background-color: #f1f1f1;
+  color: #002966;
+  border-color: #002966;
+  text-transform: uppercase;
+  border-radius: 5px;
+  font-size: 15px;
+  padding: 2px 5px;
+}
+
+.btn-primary:hover {
+  background-color: #002966;
+  color: white;
+}
+
+.dropdown {
+  padding-right: 10px;
+}
+
+.dropdown-menu {
+  height: fit-content;
+  max-height: 240px;
+  overflow: auto;
+}
+
 .card-area {
   display: flex;
   flex-direction: column;
@@ -105,6 +136,12 @@ body {
   width: 456px;
 }
 
+.card-preview-bg {
+  height: 140px;
+  width: 228px;
+  /* background-color: red; */
+}
+
 .card-preview img {
   position: absolute;
 }
@@ -114,21 +151,6 @@ body {
   z-index: 5;
   font-family: "Pokemon Pixel Font Regular";
   font-size: 28px;
-}
-
-.code {
-  left: 270px;
-  top: 10px;
-}
-
-.name {
-  left: 80px;
-  top: 46px;
-}
-
-.diamondpearl p {
-  left: 100px;
-  top: 20px;
 }
 
 .card-options {
@@ -156,6 +178,289 @@ body {
   left: 0px;
   border-radius: 20px;
   overflow: hidden;
+  background-size: cover !important;
+}
+
+.rubysapphire {
+  .name {
+    right: 90px;
+    top: 5px;
+  }
+
+  .code {
+    display: none;
+  }
+
+  .trainer-type1 {
+    right: 80px;
+    top: 45px;
+  }
+
+  .trainer-type2 {
+    right: 127px;
+    top: 45px;
+  }
+
+  .trainer-sprite {
+    top: 100px;
+    right: 122px;
+  }
+
+  .sprite-0,
+  .sprite-1,
+  .sprite-2 {
+    top: 68px;
+  }
+
+  .sprite-3,
+  .sprite-4,
+  .sprite-5 {
+    top: 126px;
+  }
+
+  .sprite-0,
+  .sprite-3 {
+    left: 12px;
+  }
+
+  .sprite-1,
+  .sprite-4 {
+    left: 106px;
+  }
+
+  .sprite-2,
+  .sprite-5 {
+    left: 201px;
+  }
+
+  .badge-list {
+    bottom: 104px;
+  }
+
+  .badge-0 {
+    left: 17px;
+  }
+
+  .badge-1 {
+    left: 49px;
+  }
+
+  .badge-2 {
+    left: 81px;
+  }
+
+  .badge-3 {
+    left: 114px;
+  }
+
+  .badge-4 {
+    left: 146px;
+  }
+
+  .badge-5 {
+    left: 177px;
+  }
+
+  .badge-6 {
+    left: 209px;
+  }
+
+  .badge-7 {
+    left: 241px;
+  }
+}
+
+.diamondpearl {
+  .name {
+    left: 79px;
+    top: 32px;
+  }
+
+  .code {
+    left: 17px;
+    top: 62px;
+  }
+
+  .trainer-type1 {
+    left: 215px;
+    top: 70px;
+  }
+
+  .trainer-type2 {
+    left: 167px;
+    top: 70px;
+  }
+
+  .trainer-sprite {
+    top: 120px;
+    right: 122px;
+  }
+
+  .sprite-box {
+    height: 50px;
+  }
+
+  .sprite-0,
+  .sprite-1,
+  .sprite-2 {
+    top: 118px;
+  }
+
+  .sprite-3,
+  .sprite-4,
+  .sprite-5 {
+    top: 173px;
+  }
+
+  .sprite-0,
+  .sprite-3 {
+    left: 13px;
+  }
+
+  .sprite-1,
+  .sprite-4 {
+    left: 101px;
+  }
+
+  .sprite-2,
+  .sprite-5 {
+    left: 190px;
+  }
+
+  .badge-list {
+    bottom: 73px;
+  }
+
+  .badge-0 {
+    left: 52px;
+  }
+
+  .badge-1 {
+    left: 77px;
+  }
+
+  .badge-2 {
+    left: 102px;
+  }
+
+  .badge-3 {
+    left: 127px;
+  }
+
+  .badge-4 {
+    left: 152px;
+  }
+
+  .badge-5 {
+    left: 177px;
+  }
+
+  .badge-6 {
+    left: 202px;
+  }
+
+  .badge-7 {
+    left: 227px;
+  }
+}
+
+.custom {
+  .name {
+    right: 75px;
+    top: 35px;
+  }
+
+  .code {
+    right: 75px;
+  }
+
+  .trainer-type1 {
+    left: 175px;
+    top: 45px;
+  }
+
+  .trainer-type2 {
+    left: 127px;
+    top: 45px;
+  }
+
+  .trainer-sprite {
+    top: 110px;
+    left: 55px;
+  }
+
+  .sprite-0,
+  .sprite-1,
+  .sprite-2 {
+    top: 92px;
+  }
+
+  .sprite-3,
+  .sprite-4,
+  .sprite-5 {
+    top: 150px;
+  }
+
+  .sprite-0,
+  .sprite-3 {
+    left: 164px;
+  }
+
+  .sprite-1,
+  .sprite-4 {
+    left: 258px;
+  }
+
+  .sprite-2,
+  .sprite-5 {
+    left: 352px;
+  }
+
+  .badge-list {
+    bottom: 93px;
+  }
+
+  .badge-0 {
+    left: 52px;
+  }
+
+  .badge-1 {
+    left: 77px;
+  }
+
+  .badge-2 {
+    left: 102px;
+  }
+
+  .badge-3 {
+    left: 127px;
+  }
+
+  .badge-4 {
+    left: 152px;
+  }
+
+  .badge-5 {
+    left: 177px;
+  }
+
+  .badge-6 {
+    left: 202px;
+  }
+
+  .badge-7 {
+    left: 227px;
+  }
+}
+
+.name {
+  left: 80px;
+  top: 46px;
+}
+
+.code {
+  left: 270px;
+  top: 10px;
 }
 
 .trainer-type1 {
@@ -172,40 +477,8 @@ body {
   transform: scale(70%);
 }
 
-.card-preview-bg {
-  height: 140px;
-  width: 228px;
-  /* background-color: red; */
-}
-
-.btn-primary,
-.btn-primary:focus {
-  background-color: #f1f1f1;
-  color: #002966;
-  border-color: #002966;
-  text-transform: uppercase;
-  border-radius: 5px;
-  font-size: 15px;
-  padding: 2px 5px;
-}
-
-.btn-primary:hover {
-  background-color: #002966;
-  color: white;
-}
-
 .type {
   display: flex;
-}
-
-.dropdown {
-  padding-right: 10px;
-}
-
-.dropdown-menu {
-  height: fit-content;
-  max-height: 240px;
-  overflow: auto;
 }
 
 .trainer-sprite {
@@ -219,6 +492,8 @@ body {
 .trainer-sprite-list {
   display: flex;
   flex-wrap: wrap;
+  overflow: auto;
+  overflow-x: hidden;
 }
 
 .trainer-sprite-list img {
@@ -232,6 +507,51 @@ body {
   transform: scale(1.8);
   image-rendering: pixelated;
   cursor: pointer;
+}
+
+.sprite-list {
+  display: flex;
+}
+
+.sprite-list img {
+  position: absolute;
+  z-index: 10;
+}
+
+.sprite-0,
+.sprite-1,
+.sprite-2 {
+  top: 94px;
+}
+
+.sprite-3,
+.sprite-4,
+.sprite-5 {
+  top: 152px;
+}
+
+.sprite-0,
+.sprite-3 {
+  left: 15px;
+}
+
+.sprite-1,
+.sprite-4 {
+  left: 108px;
+}
+
+.sprite-2,
+.sprite-5 {
+  left: 202px;
+}
+
+.sprite-box {
+  height: 52px;
+  width: 87px;
+  position: absolute;
+  z-index: 10;
+  background-position: center;
+  /* background-color: red; */
 }
 
 .badge-list {
@@ -312,49 +632,4 @@ input[type='checkbox'] {
 
 .team-select {
   border: 1px solid #002966;
-}
-
-.sprite-list {
-  display: flex;
-}
-
-.sprite-list img {
-  position: absolute;
-  z-index: 10;
-}
-
-.sprite-0,
-.sprite-1,
-.sprite-2 {
-  top: 94px;
-}
-
-.sprite-3,
-.sprite-4,
-.sprite-5 {
-  top: 152px;
-}
-
-.sprite-0,
-.sprite-3 {
-  left: 15px;
-}
-
-.sprite-1,
-.sprite-4 {
-  left: 108px;
-}
-
-.sprite-2,
-.sprite-5 {
-  left: 202px;
-}
-
-.sprite-box {
-  height: 52px;
-  width: 87px;
-  position: absolute;
-  z-index: 10;
-  background-position: center;
-  /* background-size: 120%; */
 }

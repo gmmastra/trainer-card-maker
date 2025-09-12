@@ -24,8 +24,8 @@ export function CardArea(props) {
     return (
         <>
             <div className={`card-preview ${props.cardFrame.split('-')[0]}`} ref={cardPreviewRef}>
-                <p className="code">{props.friendcode}</p>
                 <p className="name">{props.name}</p>
+                <p className="code">{props.friendcode}</p>
                 {props.trainerType1 === 'None' ? null : (
                     <img alt='' src={process.env.PUBLIC_URL + `/assets/types/${props.trainerType1}.png`} className='trainer-type1' />
                 )}
@@ -57,7 +57,6 @@ export function CardArea(props) {
             </div >
             <div className='card-options'>
                 <button onClick={htmlToImageConvert}>DOWNLOAD</button>
-                <button type="submit">RANDOMIZE</button>
                 <button type="reset" onClick={props.reset}>RESET</button>
             </div>
         </>

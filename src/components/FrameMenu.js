@@ -68,7 +68,6 @@ export function FrameMenu(props) {
                     BACKGROUND IMAGE:
                     <button onClick={handleShow}>SELECT</button>
                 </div>) : ('')}
-                {props.customBG}
             </div>
 
             {/* modal for uploading custom-frame backgrounds */}
