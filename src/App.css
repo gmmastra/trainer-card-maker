@@ -1,0 +1,662 @@
+@font-face {
+  font-family: "Pokemon Pixel Font Regular";
+  src: url(../public/assets/fonts/pokemon_pixel_font.ttf) format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  background-color: #f1f1f1;
+  color: #002966;
+  padding: 10px;
+}
+
+@media (max-width: 1200px) {
+  .menu {
+    width: 100% !important;
+    margin-top: 430px !important;
+    position: fixed;
+    overflow: scroll !important;
+    height: calc(100% - 430px);
+  }
+
+  .card-frame {
+    left: 0px;
+  }
+
+  .card-area {
+    padding: 15px 5px !important;
+  }
+
+  .card-options {
+    flex-direction: row !important;
+  }
+}
+
+.alert {
+  border: 1px solid #002966;
+  border-radius: 0px;
+  width: 400px;
+  position: fixed;
+  right: 20px;
+  bottom: 0;
+  background-color: #f1f1f1;
+}
+
+.alert button {
+  float: right;
+}
+
+.alert p {
+  margin: 10px;
+}
+
+.maker {
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 25px;
+  border-bottom: 1px #002966 solid;
+  position: fixed;
+  width: 100%;
+  background-color: #f1f1f1;
+  margin: -10px 0 0 -10px;
+  padding: 10px 20px 0;
+  z-index: 100;
+}
+
+.header svg {
+  margin: 7px;
+  color: #002966;
+}
+
+.header svg:hover {
+  color: #2f72d8;
+}
+
+.menu {
+  width: 40%;
+  margin-top: 70px;
+  padding: 0px 20px;
+}
+
+.modal-body {
+  overflow: hidden;
+  height: 60vh;
+}
+
+.modal-body input {
+  width: 400px;
+}
+
+.modal-dialog {
+  max-width: 900px;
+}
+
+.input-menu input {
+  margin-left: 7px;
+  border: 1px solid #002966;
+}
+
+.input-menu button {
+  margin-left: 10px;
+}
+
+.input-menu {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  gap: 10px;
+  border: 1px #002966 solid;
+  padding: 15px;
+}
+
+.input-menu ul {
+  padding-left: 0px;
+}
+
+.btn-primary,
+.btn-primary:focus {
+  background-color: #f1f1f1;
+  color: #002966;
+  border-color: #002966;
+  text-transform: uppercase;
+  border-radius: 5px;
+  font-size: 15px;
+  padding: 2px 5px;
+}
+
+.btn-primary:hover {
+  background-color: #002966;
+  color: white;
+}
+
+.dropdown {
+  padding-right: 10px;
+}
+
+.dropdown-menu {
+  height: fit-content;
+  max-height: 240px;
+  overflow: auto;
+}
+
+.card-area {
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+  padding: 15px 30px;
+  position: fixed;
+  right: 0px;
+  top: 100px;
+  color: black;
+}
+
+.card-preview {
+  height: 296px;
+  width: 456px;
+}
+
+.card-preview-bg {
+  height: 140px;
+  width: 228px;
+  /* background-color: red; */
+}
+
+.card-preview img {
+  position: absolute;
+}
+
+.card-preview p {
+  position: absolute;
+  z-index: 5;
+  font-family: "Pokemon Pixel Font Regular";
+  font-size: 28px;
+}
+
+.card-options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: absolute;
+  top: 300px;
+  right: 60px;
+}
+
+.card-frame {
+  z-index: 1;
+  right: 0px;
+  top: -10px;
+  margin-right: 60px;
+  margin-bottom: 15px;
+}
+
+.card-custom-bg {
+  position: absolute;
+  width: 456px;
+  height: 280px;
+  top: -10px;
+  left: 0px;
+  border-radius: 20px;
+  overflow: hidden;
+  background-size: cover !important;
+}
+
+.rubysapphire {
+  .name {
+    right: 90px;
+    top: 5px;
+  }
+
+  .code {
+    display: none;
+  }
+
+  .trainer-type1 {
+    right: 80px;
+    top: 45px;
+  }
+
+  .trainer-type2 {
+    right: 127px;
+    top: 45px;
+  }
+
+  .trainer-sprite {
+    top: 100px;
+    right: 122px;
+  }
+
+  .sprite-0,
+  .sprite-1,
+  .sprite-2 {
+    top: 68px;
+  }
+
+  .sprite-3,
+  .sprite-4,
+  .sprite-5 {
+    top: 126px;
+  }
+
+  .sprite-0,
+  .sprite-3 {
+    left: 12px;
+  }
+
+  .sprite-1,
+  .sprite-4 {
+    left: 106px;
+  }
+
+  .sprite-2,
+  .sprite-5 {
+    left: 201px;
+  }
+
+  .badge-list {
+    bottom: 104px;
+  }
+
+  .badge-0 {
+    left: 17px;
+  }
+
+  .badge-1 {
+    left: 49px;
+  }
+
+  .badge-2 {
+    left: 81px;
+  }
+
+  .badge-3 {
+    left: 114px;
+  }
+
+  .badge-4 {
+    left: 146px;
+  }
+
+  .badge-5 {
+    left: 177px;
+  }
+
+  .badge-6 {
+    left: 209px;
+  }
+
+  .badge-7 {
+    left: 241px;
+  }
+}
+
+.diamondpearl {
+  .name {
+    left: 79px;
+    top: 32px;
+  }
+
+  .code {
+    left: 17px;
+    top: 62px;
+  }
+
+  .trainer-type1 {
+    left: 215px;
+    top: 70px;
+  }
+
+  .trainer-type2 {
+    left: 167px;
+    top: 70px;
+  }
+
+  .trainer-sprite {
+    top: 120px;
+    right: 122px;
+  }
+
+  .sprite-box {
+    height: 50px;
+  }
+
+  .sprite-0,
+  .sprite-1,
+  .sprite-2 {
+    top: 118px;
+  }
+
+  .sprite-3,
+  .sprite-4,
+  .sprite-5 {
+    top: 173px;
+  }
+
+  .sprite-0,
+  .sprite-3 {
+    left: 13px;
+  }
+
+  .sprite-1,
+  .sprite-4 {
+    left: 101px;
+  }
+
+  .sprite-2,
+  .sprite-5 {
+    left: 190px;
+  }
+
+  .badge-list {
+    bottom: 73px;
+  }
+
+  .badge-0 {
+    left: 52px;
+  }
+
+  .badge-1 {
+    left: 77px;
+  }
+
+  .badge-2 {
+    left: 102px;
+  }
+
+  .badge-3 {
+    left: 127px;
+  }
+
+  .badge-4 {
+    left: 152px;
+  }
+
+  .badge-5 {
+    left: 177px;
+  }
+
+  .badge-6 {
+    left: 202px;
+  }
+
+  .badge-7 {
+    left: 227px;
+  }
+}
+
+.custom {
+  .name {
+    right: 75px;
+    top: 35px;
+  }
+
+  .code {
+    right: 75px;
+  }
+
+  .trainer-type1 {
+    left: 175px;
+    top: 45px;
+  }
+
+  .trainer-type2 {
+    left: 127px;
+    top: 45px;
+  }
+
+  .trainer-sprite {
+    top: 110px;
+    left: 55px;
+  }
+
+  .sprite-0,
+  .sprite-1,
+  .sprite-2 {
+    top: 92px;
+  }
+
+  .sprite-3,
+  .sprite-4,
+  .sprite-5 {
+    top: 150px;
+  }
+
+  .sprite-0,
+  .sprite-3 {
+    left: 164px;
+  }
+
+  .sprite-1,
+  .sprite-4 {
+    left: 258px;
+  }
+
+  .sprite-2,
+  .sprite-5 {
+    left: 352px;
+  }
+
+  .badge-list {
+    bottom: 93px;
+  }
+
+  .badge-0 {
+    left: 52px;
+  }
+
+  .badge-1 {
+    left: 77px;
+  }
+
+  .badge-2 {
+    left: 102px;
+  }
+
+  .badge-3 {
+    left: 127px;
+  }
+
+  .badge-4 {
+    left: 152px;
+  }
+
+  .badge-5 {
+    left: 177px;
+  }
+
+  .badge-6 {
+    left: 202px;
+  }
+
+  .badge-7 {
+    left: 227px;
+  }
+}
+
+.name {
+  left: 80px;
+  top: 46px;
+}
+
+.code {
+  left: 270px;
+  top: 10px;
+}
+
+.trainer-type1 {
+  z-index: 2;
+  right: 165px;
+  top: 55px;
+  transform: scale(70%);
+}
+
+.trainer-type2 {
+  z-index: 2;
+  right: 117px;
+  top: 55px;
+  transform: scale(70%);
+}
+
+.type {
+  display: flex;
+}
+
+.trainer-sprite {
+  top: 115px;
+  right: 110px;
+  z-index: 50;
+  transform: scale(2.2);
+  image-rendering: pixelated;
+}
+
+.trainer-sprite-list {
+  display: flex;
+  flex-wrap: wrap;
+  overflow: auto;
+  overflow-x: hidden;
+  height: calc(60vh - 90px);
+}
+
+.trainer-sprite-list img {
+  padding: 20px 15px;
+  transform: scale(1.5);
+  image-rendering: pixelated;
+  cursor: pointer;
+}
+
+.trainer-sprite-list img:hover {
+  transform: scale(1.8);
+  image-rendering: pixelated;
+  cursor: pointer;
+}
+
+.sprite-list {
+  display: flex;
+}
+
+.sprite-list img {
+  position: absolute;
+  z-index: 10;
+}
+
+.sprite-0,
+.sprite-1,
+.sprite-2 {
+  top: 94px;
+}
+
+.sprite-3,
+.sprite-4,
+.sprite-5 {
+  top: 152px;
+}
+
+.sprite-0,
+.sprite-3 {
+  left: 15px;
+}
+
+.sprite-1,
+.sprite-4 {
+  left: 108px;
+}
+
+.sprite-2,
+.sprite-5 {
+  left: 202px;
+}
+
+.sprite-box {
+  height: 52px;
+  width: 87px;
+  position: absolute;
+  z-index: 10;
+  background-position: center;
+  /* background-color: red; */
+}
+
+.badge-list {
+  position: absolute;
+  z-index: 20;
+  bottom: 87px;
+  transform: scale(1.5);
+  image-rendering: pixelated;
+}
+
+.badge-0 {
+  left: 17px;
+}
+
+.badge-1 {
+  left: 50px;
+}
+
+.badge-2 {
+  left: 81px;
+}
+
+.badge-3 {
+  left: 113px;
+}
+
+.badge-4 {
+  left: 145px;
+}
+
+.badge-5 {
+  left: 177px;
+}
+
+.badge-6 {
+  left: 210px;
+}
+
+.badge-7 {
+  left: 240px;
+}
+
+.team-select {
+  text-transform: capitalize;
+}
+
+.team-member {
+  border: 1px #002966 solid;
+  background-color: #f1f1f1;
+  padding: 5px;
+}
+
+.team-member button {
+  float: right;
+  border: none;
+  background: transparent;
+  color: #002966;
+  padding-right: 10px;
+}
+
+h3 {
+  margin-top: 0px;
+}
+
+details {
+  border: 1px solid #002966;
+  padding: 5px;
+}
+
+label span {
+  padding-left: 10px;
+}
+
+input[type='checkbox'] {
+  border: 1px solid #002966 !important;
+  overflow: hidden;
+}
+
+.team-select {
+  border: 1px solid #002966;
+}
