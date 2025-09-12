@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/trainer-card-maker/static/css/main.0f997ace.css",
-    "main.js": "/trainer-card-maker/static/js/main.69ea27f6.js",
+    "main.css": "/trainer-card-maker/static/css/main.f19b2b0d.css",
+    "main.js": "/trainer-card-maker/static/js/main.b91eec7b.js",
     "static/media/pokemon_pixel_font.ttf": "/trainer-card-maker/static/media/pokemon_pixel_font.13c858824ac1c9203408.ttf",
     "index.html": "/trainer-card-maker/index.html",
-    "main.0f997ace.css.map": "/trainer-card-maker/static/css/main.0f997ace.css.map",
-    "main.69ea27f6.js.map": "/trainer-card-maker/static/js/main.69ea27f6.js.map"
+    "main.f19b2b0d.css.map": "/trainer-card-maker/static/css/main.f19b2b0d.css.map",
+    "main.b91eec7b.js.map": "/trainer-card-maker/static/js/main.b91eec7b.js.map"
   },
   "entrypoints": [
-    "static/css/main.0f997ace.css",
-    "static/js/main.69ea27f6.js"
+    "static/css/main.f19b2b0d.css",
+    "static/js/main.b91eec7b.js"
   ]
 }
